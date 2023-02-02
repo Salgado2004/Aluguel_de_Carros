@@ -1,7 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;500;600;700&display=swap');
+
 $color1: #53679b;
 $color2: #3b4b75;
 $color3: #353e55;
 $color4: #1e232e;
+$color5: #484957;
+$color6: #202020;
+$color7: #c0c6d4;
+$color8: #F2E9D8;
+
+$font1: 'Roboto Slab', serif;
+
 
 *{
     margin: 0;
@@ -17,6 +26,68 @@ header{
     }
 }
 
+.splide__track{
+    margin-top: 2rem;
+
+    .splide__slide{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 15rem;
+    
+        .slide{
+            display: flex;
+            width: 60%;
+            padding: 10px;
+    
+            .slide__image{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 60%;
+    
+                img{
+                    height: 90%;
+                    object-fit: cover;
+                    width: 100%;
+                }
+            }
+            .slide__content{
+                font-family: $font1;
+                width: 40%;
+                border-radius: 10px;
+                background-color: $color7;
+                border: 2px solid $color2;
+                box-shadow: 3px 3px 10px $color6;
+
+                ul{
+                    margin-top: 10px;
+                    margin-left: 25px;
+                    font-size: 12pt;
+
+                    li{
+                        margin-bottom: 3px;
+                    }
+                }
+
+                button{
+                    margin-top: 10px;
+                    margin-left: 15px;
+                    font-size: 14pt;
+                    font-family: $font1;
+                    padding: 3px;
+                    outline: none;
+                    margin: 1px solid $color6;
+                    border-radius: 5px;
+                    background-color: #59f759;
+                }
+            }
+    
+        }
+    }
+}
+
+
 .thumbnails {
     display: flex;
     margin: 1rem auto 0;
@@ -29,6 +100,7 @@ header{
         overflow: hidden;
         list-style: none;
         margin: 0 0.2rem;
+        transition: 0.4s;
         cursor: pointer;
         opacity: 0.3;
 
@@ -39,6 +111,33 @@ header{
 
         &.is-active {
             opacity: 1;
+            transform: scale(1.1);
         }  
     }
+}
+
+footer{
+    position: absolute;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+	text-align: center;
+    font-size: 18px;
+    font-family: $font1;
+    font-weight: 100;
+    letter-spacing: 1.1;
+    background-color: $color6;
+    color: $color5;
+
+    a{
+        text-decoration: none;
+        color: $color5;
+
+        &:hover{
+            color: $color8;
+        }
+    }
+
 }

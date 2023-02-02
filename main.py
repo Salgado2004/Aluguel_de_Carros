@@ -6,5 +6,4 @@ app = Flask(__name__)
 def entry_page():
     return render_template("index.html")
 
-
 app.run(debug=True)

@@ -1,77 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aluguel de carros</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aluguel de carros</title>
 
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 
-    <link rel="icon" href="../static/assets/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../static/folhaEstilo.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="icon" href="../static/assets/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="../static/folhaEstilo.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-    <header>
-        <img src="../static/assets/logo.png" alt="logo">
-    </header>
-    <section id="main-carousel" class="splide">
-        <div class="splide__arrows">
-            <button class="splide__arrow splide__arrow--prev">
-                <span class="material-symbols-outlined">arrow_left</span>
-            </button>
-            <button class="splide__arrow splide__arrow--next">
-                <span class="material-symbols-outlined">arrow_right</span>
-            </button>
-        </div>
-        <div class="splide__track">
-          <ul class="splide__list">
-            <li class="splide__slide">
+  <header>
+    <img src="../static/assets/logo.png" alt="logo">
+  </header>
+  <section id="main-carousel" class="splide">
+    <div class="splide__arrows">
+      <button class="splide__arrow splide__arrow--prev">
+        <span class="material-symbols-outlined">arrow_left</span>
+      </button>
+      <button class="splide__arrow splide__arrow--next">
+        <span class="material-symbols-outlined">arrow_right</span>
+      </button>
+    </div>
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">
+          <div class="slide">
+            <div class="slide__image">
               <img src="../static/assets/carro1.png" alt="">
-            </li>
-            <li class="splide__slide">
+            </div>
+            <div class="slide__content">
+              <ul>
+                <li>Modelo;</li>
+                <li>Marca;</li>
+                <li>Ano;</li>
+                <li>Observações;</li>
+                <li>Valor da diaria;</li>
+                <li>Status (alugado, livre, em manutenção)</li>
+              </ul>
+              <button>Alugar</button>
+            </div>
+          </div>
+        </li>
+        <li class="splide__slide">
+          <div class="slide">
+            <div class="slide__image">
               <img src="../static/assets/carro2.png" alt="">
-            </li>
-            <li class="splide__slide">
+            </div>
+            <div class="slide__content">
+              <p>Texto texto texto</p>
+            </div>
+          </div>
+        </li>
+        <li class="splide__slide">
+          <div class="slide">
+            <div class="slide__image">
               <img src="../static/assets/carro3.png" alt="">
-            </li>
-            <li class="splide__slide">
+            </div>
+            <div class="slide__content">
+              <p>Texto texto texto</p>
+            </div>
+          </div>
+        </li>
+        <li class="splide__slide">
+          <div class="slide">
+            <div class="slide__image">
               <img src="../static/assets/carro4.png" alt="">
-            </li>
-            <li class="splide__slide">
-                <img src="../static/assets/carro5.png" alt="">
-            </li>
-            <li class="splide__slide">
-                <img src="../static/assets/carro6.png" alt="">
-            </li>
-          </ul>
-        </div>
-      </section>
-      
-      <ul id="thumbnails" class="thumbnails">
-        <li class="thumbnail">
-          <img src="../static/assets/carro1.png" alt="">
+            </div>
+            <div class="slide__content">
+              <p>Texto texto texto</p>
+            </div>
+          </div>
         </li>
-        <li class="thumbnail">
-          <img src="../static/assets/carro2.png" alt="">
+        <li class="splide__slide">
+          <div class="slide">
+            <div class="slide__image">
+              <img src="../static/assets/carro5.png" alt="">
+            </div>
+            <div class="slide__content">
+              <p>Texto texto texto</p>
+            </div>
+          </div>
         </li>
-        <li class="thumbnail">
-          <img src="../static/assets/carro3.png" alt="">
-        </li>
-        <li class="thumbnail">
-          <img src="../static/assets/carro4.png" alt="">
-        </li>
-        <li class="thumbnail">
-            <img src="../static/assets/carro5.png" alt="">
-        </li>
-        <li class="thumbnail">
-            <img src="../static/assets/carro6.png" alt="">
+        <li class="splide__slide">
+          <div class="slide">
+            <div class="slide__image">
+              <img src="../static/assets/carro6.png" alt="">
+            </div>
+            <div class="slide__content">
+              <p>Texto texto texto</p>
+            </div>
+          </div>
         </li>
       </ul>
-
-    Image by <a href="https://www.freepik.com/free-vector/flat-car-collection-with-side-view_1505021.htm#query=car&position=19&from_view=keyword">Freepik</a>
-    <script src="../static/slider.js"></script>
+    </div>
+  </section>
+      
+  <ul id="thumbnails" class="thumbnails">
+    <li class="thumbnail">
+      <img src="../static/assets/carro1.png" alt="">
+    </li>
+    <li class="thumbnail">
+      <img src="../static/assets/carro2.png" alt="">
+    </li>
+    <li class="thumbnail">
+      <img src="../static/assets/carro3.png" alt="">
+    </li>
+    <li class="thumbnail">
+      <img src="../static/assets/carro4.png" alt="">
+    </li>
+    <li class="thumbnail">
+      <img src="../static/assets/carro5.png" alt="">
+    </li>
+    <li class="thumbnail">
+      <img src="../static/assets/carro6.png" alt="">
+    </li>
+  </ul>
+  <footer>
+    <p>&copy; Leonardo Salgado | Image by <a href="https://www.freepik.com/free-vector/flat-car-collection-with-side-view_1505021.htm#query=car&position=19&from_view=keyword" target="_blank">Freepik</a></p>
+  </footer>
+  <script src="../static/slider.js"></script>
 </body>
 </html>
