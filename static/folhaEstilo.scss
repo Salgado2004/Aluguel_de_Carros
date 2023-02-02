@@ -26,6 +26,55 @@ header{
     }
 }
 
+#dados-aluguel{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    #formulario{
+        display: flex;
+        justify-content: space-around;
+        width: 65%;
+        background-color: $color3;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0px 3px 3px $color4;
+
+        p{
+            margin: 15px;
+            color: $color7;
+            font-family: $font1;
+            font-size: 14pt;
+        }
+
+        .data{
+            background-color: $color7;
+            margin: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+
+            input{
+                font-family: $font1;
+                font-size: 14pt;
+                background: transparent;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+
+    #perfil{
+        font-family: $font1;
+        font-size: 16pt;
+        position: absolute;
+        margin: 20px;
+        right: 0;
+        display: flex;
+        align-items: center;
+    }
+}
+
 .filter{
     font-family: $font1;
     margin-top: 1em;
@@ -33,6 +82,7 @@ header{
     margin-bottom: 1em;
     p{
         color: #969696;
+        font-size: 15pt;
         margin-bottom: .5em;
     }
 
@@ -115,6 +165,10 @@ header{
                     margin: 1px solid $color6;
                     border-radius: 5px;
                     background-color: #59f759;
+
+                    &:hover{
+                        background-color: #1e6d1e;
+                    }
                 }
             }
     

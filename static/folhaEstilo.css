@@ -13,6 +13,50 @@ header img {
   margin: auto;
 }
 
+#dados-aluguel {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#dados-aluguel #formulario {
+  display: flex;
+  justify-content: space-around;
+  width: 65%;
+  background-color: #353e55;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0px 3px 3px #1e232e;
+}
+#dados-aluguel #formulario p {
+  margin: 15px;
+  color: #c0c6d4;
+  font-family: "Roboto Slab", serif;
+  font-size: 14pt;
+}
+#dados-aluguel #formulario .data {
+  background-color: #c0c6d4;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+#dados-aluguel #formulario .data input {
+  font-family: "Roboto Slab", serif;
+  font-size: 14pt;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+#dados-aluguel #perfil {
+  font-family: "Roboto Slab", serif;
+  font-size: 16pt;
+  position: absolute;
+  margin: 20px;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
 .filter {
   font-family: "Roboto Slab", serif;
   margin-top: 1em;
@@ -21,6 +65,7 @@ header img {
 }
 .filter p {
   color: #969696;
+  font-size: 15pt;
   margin-bottom: 0.5em;
 }
 .filter .container {
@@ -98,6 +143,9 @@ header img {
   margin: 1px solid #202020;
   border-radius: 5px;
   background-color: #59f759;
+}
+.splide__track .splide__slide .slide .slide__content button:hover {
+  background-color: #1e6d1e;
 }
 
 .thumbnails {
