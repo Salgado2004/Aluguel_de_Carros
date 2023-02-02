@@ -13,6 +13,39 @@ header img {
   margin: auto;
 }
 
+.filter {
+  font-family: "Roboto Slab", serif;
+  margin-top: 1em;
+  margin-left: 15px;
+  margin-bottom: 1em;
+}
+.filter p {
+  color: #969696;
+  margin-bottom: 0.5em;
+}
+.filter .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.filter .container .category {
+  font-family: "Roboto Slab", serif;
+  width: 150px;
+  padding: 7px 0;
+  background-color: #484957;
+  color: #F2E9D8;
+  text-align: center;
+  border-radius: 10px;
+  margin: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.filter .container .category:focus, .filter .container .category:hover {
+  font-weight: 500;
+  color: #202020;
+  background-color: #c0c6d4;
+}
+
 .splide__track {
   margin-top: 2rem;
 }
