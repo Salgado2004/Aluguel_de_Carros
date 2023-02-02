@@ -13,8 +13,9 @@ O carro deverá ser cadastrado com os seguintes atributos:
 - Observações;
 - Valor da diaria;
 - Status (alugado, livre, em manutenção)
-- O projeto terá 2 partes que se interagem:
 
-- [] Criar API com um CRUD (Criar, ler, update e delete). Os dados podem ser salvos em um array ou no SQLite. Será utilizado para avaliar a nota de API.
-- [] Crie uma/algumas pagina HTML, CSS e JS, onde exista o consumo da API utilizando o Ajax ou FetchAPI. Será utilizado para a nota de Ajax.
-- [] Fiquem livres para adicionar campos ou funcionalidades ao CRUD.
+O projeto terá 2 partes que se interagem:
+
+- [ ] Criar API com um CRUD (Criar, ler, update e delete). Os dados podem ser salvos em um array ou no SQLite. Será utilizado para avaliar a nota de API.
+- [ ] Crie uma/algumas pagina HTML, CSS e JS, onde exista o consumo da API utilizando o Ajax ou FetchAPI. Será utilizado para a nota de Ajax.
+- [ ] Fiquem livres para adicionar campos ou funcionalidades ao CRUD.
