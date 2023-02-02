@@ -1,0 +1,44 @@
+$color1: #53679b;
+$color2: #3b4b75;
+$color3: #353e55;
+$color4: #1e232e;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background: linear-gradient($color1, $color2, $color3);
+    box-shadow: 0px 3px 3px $color4;
+    img{
+        height: 150px;
+        margin: auto;
+    }
+}
+
+.thumbnails {
+    display: flex;
+    margin: 1rem auto 0;
+    padding: 0;
+    justify-content: center;
+
+    .thumbnail {
+        width: 70px;
+        height: 70px;
+        overflow: hidden;
+        list-style: none;
+        margin: 0 0.2rem;
+        cursor: pointer;
+        opacity: 0.3;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        &.is-active {
+            opacity: 1;
+        }  
+    }
+}

@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: linear-gradient(#53679b, #3b4b75, #353e55);
+  box-shadow: 0px 3px 3px #1e232e;
+}
+header img {
+  height: 150px;
+  margin: auto;
+}
+
+.thumbnails {
+  display: flex;
+  margin: 1rem auto 0;
+  padding: 0;
+  justify-content: center;
+}
+.thumbnails .thumbnail {
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  list-style: none;
+  margin: 0 0.2rem;
+  cursor: pointer;
+  opacity: 0.3;
+}
+.thumbnails .thumbnail img {
+  width: 100%;
+  height: auto;
+}
+.thumbnails .thumbnail.is-active {
+  opacity: 1;
+}/*# sourceMappingURL=folhaEstilo.css.map */
