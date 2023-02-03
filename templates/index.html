@@ -19,20 +19,20 @@
   </header>
   <div id="dados-aluguel">
     <div id="formulario">
-      <p>Faça sua reserva</p>
+      <p>Faça sua reserva:</p>
       <div class="data">
         <input type="text" id="local" placeholder="Local de retirada">
         <span class="material-symbols-outlined">where_to_vote</span>
       </div>
       <div class="data">
-        <input type="date" id="data">
+        <input type="date" id="data" title="Insira o local primeiro" disabled>
       </div>
       <div class="data">
-        <input type="time" id="hora">
+        <input type="time" id="hora" title="Insira a data primeiro" disabled>
       </div>
     </div>
     <div id="perfil">
-      <p>Login</p>
+      <a href="#">Login</a>
       <span class="material-symbols-outlined">login</span>
     </div>
   </div>
@@ -70,7 +70,7 @@
                 <li>Ano;</li>
                 <li>Observações;</li>
                 <li>Valor da diaria;</li>
-                <li>Status (alugado, livre, em manutenção)</li>
+                <li>Status</li>
               </ul>
               <button>Alugar</button>
             </div>
@@ -154,5 +154,6 @@
     <p>&copy; Leonardo Salgado | Image by <a href="https://www.freepik.com/free-vector/flat-car-collection-with-side-view_1505021.htm#query=car&position=19&from_view=keyword" target="_blank">Freepik</a></p>
   </footer>
   <script src="../static/slider.js"></script>
+  <script src="../static/generalFunctions.js"></script>
 </body>
 </html>
