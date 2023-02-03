@@ -211,6 +211,17 @@ header{
             width: 100%;
             height: auto;
         }
+        #addCar{
+            width: 50%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            span{
+                width: 75%;
+            }
+        }
 
         &.is-active {
             opacity: 1;

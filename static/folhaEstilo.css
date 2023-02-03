@@ -179,6 +179,16 @@ header img {
   width: 100%;
   height: auto;
 }
+.thumbnails .thumbnail #addCar {
+  width: 50%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.thumbnails .thumbnail #addCar span {
+  width: 75%;
+}
 .thumbnails .thumbnail.is-active {
   opacity: 1;
   transform: scale(1.1);
