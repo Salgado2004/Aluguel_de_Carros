@@ -5,7 +5,17 @@ document.body.onload = function(){
     })
     .then(response => response.json())
     .then(json =>{
-        alert(`Login: ${json.login.logged}`);
+        perfil = document.querySelector("#perfil")
+        if (json.login.logged == "True"){
+            perfil.innerHTML = `
+            <div>
+                <p>${json.login.nome}</p>
+                <a href="#" class="options">Meus empréstimos</a><br>
+                <a href="#" class="options">Meu histórico</a><br>
+                <button id="logout">Sair <span class="material-symbols-outlined">logout</span></button>
+            </div>
+            `;
+        }
     })
     .catch(error => console.error(error))
 }
