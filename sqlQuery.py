@@ -16,6 +16,12 @@ def get_cars():
     
     return cars_list
 
+def get_login():
+    conn = get_db_connection()
+    login = conn.execute('SELECT * FROM loggedin').fetchall()
+    conn.close()
+    print(login[0]['logged'], login[0]['id'], login[0]['nome'])
+    return {'logged': login[0]['logged'], 'id': login[0]['id'], 'nome': login[0]['nome']}
 
 #import hashlib
 #senha = hashlib.sha1(b"senha").hexdigest()

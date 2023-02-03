@@ -6,6 +6,11 @@ def load_cars():
     cars_list = bd.get_cars()
     return cars_list
 
+@app.route('/islogged', methods=['GET'])
+def is_logged():
+    login = bd.get_login()
+    return {'login': login}, 200
+
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     
