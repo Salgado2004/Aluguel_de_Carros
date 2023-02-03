@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aluguel de carros</title>
-
+  
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 
   <link rel="icon" href="../static/assets/logo.png" type="image/x-icon">
@@ -32,13 +32,13 @@
       </div>
     </div>
     <div id="perfil">
-      <a href="#">Login</a>
+      <a href="/login">Login</a>
       <span class="material-symbols-outlined">login</span>
     </div>
   </div>
 
   <div class="filter">
-    <p>Filtrar por:</p>
+    <p>Ordenar por:</p>
     <div class="container">
       <button class="category active" name="all">Disponíveis</button>
       <button class="category" name="national">Preço</button>
@@ -47,7 +47,7 @@
     </div>
   </div>
 
-  <section id="main-carousel" class="splide">
+  <section id="main-carousel" class="splide" aria-labelledby="carousel">
     <div class="splide__arrows">
       <button class="splide__arrow splide__arrow--prev">
         <span class="material-symbols-outlined">arrow_left</span>
@@ -58,74 +58,36 @@
     </div>
     <div class="splide__track">
       <ul class="splide__list">
+        {% for car in the_cars %}
         <li class="splide__slide">
           <div class="slide">
             <div class="slide__image">
-              <img src="../static/assets/carro1.png" alt="">
+              <img src="../static/assets/{{ car['img']}}" alt="">
             </div>
             <div class="slide__content">
               <ul>
-                <li>Modelo;</li>
-                <li>Marca;</li>
-                <li>Ano;</li>
-                <li>Observações;</li>
-                <li>Valor da diaria;</li>
-                <li>Status</li>
+                <li>{{ car['marca']}};</li>
+                <li>{{ car['modelo']}};</li>
+                <li>{{ car['ano']}};</li>
+                <li>{{ car['obs']}};</li>
+                <li>Diária: R${{ car['valor']}};</li>
+                {% if car['status'] == 1 %}
+                <li>Disponível</li>
+                {% elif car['status'] == 2 %}
+                <li style="color: red">Alugado</li>
+                {% else %}
+                <li style="color: red">Em manutenção</li>
+                {% endif %}
               </ul>
+              {% if car['status'] > 1 %}
+              <button disabled>Alugar</button>
+              {% else %}
               <button>Alugar</button>
+              {% endif %}
             </div>
           </div>
         </li>
-        <li class="splide__slide">
-          <div class="slide">
-            <div class="slide__image">
-              <img src="../static/assets/carro2.png" alt="">
-            </div>
-            <div class="slide__content">
-              <p>Texto texto texto</p>
-            </div>
-          </div>
-        </li>
-        <li class="splide__slide">
-          <div class="slide">
-            <div class="slide__image">
-              <img src="../static/assets/carro3.png" alt="">
-            </div>
-            <div class="slide__content">
-              <p>Texto texto texto</p>
-            </div>
-          </div>
-        </li>
-        <li class="splide__slide">
-          <div class="slide">
-            <div class="slide__image">
-              <img src="../static/assets/carro4.png" alt="">
-            </div>
-            <div class="slide__content">
-              <p>Texto texto texto</p>
-            </div>
-          </div>
-        </li>
-        <li class="splide__slide">
-          <div class="slide">
-            <div class="slide__image">
-              <img src="../static/assets/carro5.png" alt="">
-            </div>
-            <div class="slide__content">
-              <p>Texto texto texto</p>
-            </div>
-          </div>
-        </li>
-        <li class="splide__slide">
-          <div class="slide">
-            <div class="slide__image">
-              <img src="../static/assets/carro6.png" alt="">
-            </div>
-            <div class="slide__content">
-              <p>Texto texto texto</p>
-            </div>
-          </div>
-        </li>
+        {% endfor %}
         <li class="splide__slide">
           <div id="addYourCar">
             <h2>Alugue o seu carro!</h2>
@@ -138,24 +100,11 @@
   </section>
       
   <ul id="thumbnails" class="thumbnails">
+    {% for car in the_cars %}
     <li class="thumbnail">
-      <img src="../static/assets/carro1.png" alt="">
+      <img src="../static/assets/{{ car['img'] }}" alt="">
     </li>
-    <li class="thumbnail">
-      <img src="../static/assets/carro2.png" alt="">
-    </li>
-    <li class="thumbnail">
-      <img src="../static/assets/carro3.png" alt="">
-    </li>
-    <li class="thumbnail">
-      <img src="../static/assets/carro4.png" alt="">
-    </li>
-    <li class="thumbnail">
-      <img src="../static/assets/carro5.png" alt="">
-    </li>
-    <li class="thumbnail">
-      <img src="../static/assets/carro6.png" alt="">
-    </li>
+    {% endfor %}
     <li class="thumbnail">
       <div id="addCar">
         <span class="material-symbols-outlined">add_circle</span>
@@ -165,7 +114,7 @@
   <footer>
     <p>&copy; Leonardo Salgado | Image by <a href="https://www.freepik.com/free-vector/flat-car-collection-with-side-view_1505021.htm#query=car&position=19&from_view=keyword" target="_blank">Freepik</a></p>
   </footer>
-  <script src="../static/slider.js"></script>
   <script src="../static/generalFunctions.js"></script>
+  <script src="../static/slider.js"></script>
 </body>
 </html>
