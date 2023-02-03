@@ -158,6 +158,40 @@ header img {
   background-color: #1e6d1e;
   cursor: pointer;
 }
+.splide__track .splide__slide #addYourCar {
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #c0c6d4;
+  border: 2px solid #3b4b75;
+  box-shadow: 3px 3px 10px #202020;
+  font-family: "Roboto Slab", serif;
+}
+.splide__track .splide__slide #addYourCar h2 {
+  font-size: 18pt;
+  color: #53679b;
+}
+.splide__track .splide__slide #addYourCar p {
+  font-size: 14pt;
+  text-align: center;
+}
+.splide__track .splide__slide #addYourCar button {
+  font-size: 14pt;
+  font-family: "Roboto Slab", serif;
+  padding: 3px;
+  outline: none;
+  margin: 1px solid #202020;
+  border-radius: 5px;
+  background-color: #59f759;
+}
+.splide__track .splide__slide #addYourCar button:hover {
+  background-color: #1e6d1e;
+  cursor: pointer;
+}
 
 .thumbnails {
   display: flex;
@@ -185,9 +219,6 @@ header img {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.thumbnails .thumbnail #addCar span {
-  width: 75%;
 }
 .thumbnails .thumbnail.is-active {
   opacity: 1;
