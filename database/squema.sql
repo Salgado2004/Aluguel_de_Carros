@@ -3,7 +3,7 @@ CREATE TABLE carros (
     modelo TEXT NOT NULL,
     marca TEXT NOT NULL,
     ano INT NOT NULL,
-    observações TEXT,
+    observation TEXT,
     valorDiaria FLOAT NOT NULL,
     statusCarro INT NOT NULL
 );
