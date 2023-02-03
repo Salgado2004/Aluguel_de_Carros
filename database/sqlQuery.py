@@ -11,3 +11,7 @@ conn.close()
 
 for car in carros:
     print(car['marca'], car['modelo'], car['imgCarro'])
+
+#import hashlib
+#senha = hashlib.sha1(b"senha").hexdigest()
+#print(senha)
