@@ -158,6 +158,28 @@ header img {
   border: 2px solid #3b4b75;
   box-shadow: 3px 3px 10px #202020;
 }
+.splide__track .splide__slide .slide .slide__content .forDono {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  float: right;
+  padding: 5px;
+  z-index: 1;
+  border-radius: 10px;
+}
+.splide__track .splide__slide .slide .slide__content .forDono button {
+  padding: 2px;
+  outline: none;
+  border: 2px solid #353e55;
+  background-color: transparent;
+  border-radius: 5px;
+}
+.splide__track .splide__slide .slide .slide__content .forDono button:hover {
+  background-color: #53679b;
+  color: #F2E9D8;
+  cursor: pointer;
+}
 .splide__track .splide__slide .slide .slide__content ul {
   margin-top: 10px;
   margin-left: 25px;
@@ -166,7 +188,7 @@ header img {
 .splide__track .splide__slide .slide .slide__content ul li {
   margin-bottom: 3px;
 }
-.splide__track .splide__slide .slide .slide__content button {
+.splide__track .splide__slide .slide .slide__content .rent {
   margin-top: 10px;
   margin-left: 15px;
   font-size: 14pt;
@@ -178,7 +200,7 @@ header img {
   border-radius: 5px;
   background-color: #59f759;
 }
-.splide__track .splide__slide .slide .slide__content button:hover {
+.splide__track .splide__slide .slide .slide__content .rent:hover {
   background-color: #1e6d1e;
   cursor: pointer;
 }

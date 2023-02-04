@@ -199,6 +199,30 @@ header{
                 border: 2px solid $color2;
                 box-shadow: 3px 3px 10px $color6;
 
+                .forDono{
+                    position: relative;
+                    width: fit-content;
+                    float: right;
+                    padding: 5px;
+                    z-index: 1;
+                    border-radius: 10px;
+
+                    button{
+                        padding: 2px;
+                        outline: none;
+                        border: 2px solid $color3;
+                        background-color: transparent;
+                        border-radius: 5px;
+
+                        &:hover{
+                            background-color: $color1;
+                            color: $color8;
+                            cursor: pointer;
+                        }
+
+                    }
+                }
+
                 ul{
                     margin-top: 10px;
                     margin-left: 25px;
@@ -209,7 +233,7 @@ header{
                     }
                 }
 
-                button{
+                .rent{
                     margin-top: 10px;
                     margin-left: 15px;
                     font-size: 14pt;

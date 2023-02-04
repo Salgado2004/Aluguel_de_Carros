@@ -32,6 +32,23 @@ filtros.forEach(button => {
     }
 }); 
 
+forDono = document.querySelectorAll(".slide__content");
+
+forDono.forEach(element => {
+    idUser = `${window.sessionStorage.getItem("idUsuario")}`;
+    if (element.ariaLabel == idUser){
+        divUD = element.children[0];
+        divUD.innerHTML = `
+            <button>
+              <span class="material-symbols-outlined">edit</span>
+            </button>
+            <button>
+              <span class="material-symbols-outlined">delete</span>
+            </button>
+        `;
+    }
+});
+
 
 local = document.querySelector("#local");
 data = document.querySelector("#data");
