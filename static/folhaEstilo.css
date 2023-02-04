@@ -174,7 +174,7 @@ header img {
   font-family: "Roboto Slab", serif;
   padding: 3px;
   outline: none;
-  margin: 1px solid #202020;
+  border: 1px solid #202020;
   border-radius: 5px;
   background-color: #59f759;
 }
@@ -208,7 +208,7 @@ header img {
   font-family: "Roboto Slab", serif;
   padding: 3px;
   outline: none;
-  margin: 1px solid #202020;
+  border: 1px solid #202020;
   border-radius: 5px;
   background-color: #59f759;
 }
@@ -272,7 +272,7 @@ footer a:hover {
   color: #F2E9D8;
 }
 
-#loginTitle {
+#Title {
   margin: 35px;
   font-family: "Roboto Slab", serif;
   font-size: 25pt;
@@ -316,7 +316,7 @@ footer a:hover {
   font-family: "Roboto Slab", serif;
   padding: 3px;
   outline: none;
-  margin: 1px solid #202020;
+  border: 1px solid #202020;
   border-radius: 5px;
   background-color: #59f759;
 }
@@ -346,6 +346,122 @@ footer a:hover {
 #contentForm > div #noSign a:hover {
   color: #53679b;
   text-decoration: underline;
+}
+
+#add-new-car {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#add-new-car form {
+  background-color: #c0c6d4;
+  border: 2px solid #1e232e;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 50px;
+  width: 60%;
+}
+#add-new-car form div {
+  width: 100%;
+  display: flex;
+}
+#add-new-car form div #dados-carro {
+  padding: 10px;
+  width: 50%;
+}
+#add-new-car form div #dados-carro fieldset {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #3b4b75;
+  font-family: "Roboto Slab", serif;
+  display: flex;
+  flex-direction: column;
+}
+#add-new-car form div #dados-carro fieldset legend {
+  margin: 3px;
+  font-size: 14pt;
+  color: #53679b;
+}
+#add-new-car form div #dados-carro fieldset div {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+#add-new-car form div #dados-carro fieldset div input {
+  margin-left: 5px;
+}
+#add-new-car form div #dados-carro fieldset div input[type=text] {
+  font-family: "Roboto Slab", serif;
+  border: 1px solid #3b4b75;
+  border-radius: 5px;
+  padding: 2px;
+  outline: none;
+  background-color: #F2E9D8;
+}
+#add-new-car form div #dados-carro fieldset div input[type=range] {
+  -webkit-appearance: none;
+  background-color: #F2E9D8;
+  border: 1px solid #3b4b75;
+  outline: none;
+  height: 8px;
+  border-radius: 15px;
+}
+#add-new-car form div #dados-carro fieldset div input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 15px;
+  border-radius: 50%;
+  background: #353e55;
+  cursor: pointer;
+}
+#add-new-car form div #img-carro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  width: 50%;
+}
+#add-new-car form div #img-carro legend {
+  font-family: "Roboto Slab", serif;
+  font-size: 14pt;
+  color: #53679b;
+}
+#add-new-car form div #img-carro div {
+  margin-top: 10px;
+}
+#add-new-car form div #img-carro div input[type=radio] {
+  display: none;
+}
+#add-new-car form div #img-carro div input[type=radio]:checked + label {
+  border: 1px solid #3b4b75;
+}
+#add-new-car form div #img-carro div input[type=radio]:checked + label img {
+  transform: scale(1.1);
+}
+#add-new-car form div #img-carro div label {
+  height: 65px;
+  border-radius: 5px;
+}
+#add-new-car form div #img-carro div label img {
+  height: 100%;
+}
+#add-new-car form div #img-carro div label:hover {
+  cursor: pointer;
+  filter: brightness(120%);
+}
+#add-new-car form button {
+  font-size: 14pt;
+  font-family: "Roboto Slab", serif;
+  padding: 3px;
+  outline: none;
+  border: 1px solid #202020;
+  border-radius: 5px;
+  background-color: #59f759;
+}
+#add-new-car form button:hover {
+  background-color: #1e6d1e;
+  cursor: pointer;
 }
 
 @media (max-height: 755px) {

@@ -13,7 +13,7 @@ def get_cars(sort):
         case "price":
             order = "valorDiaria"
         case "year":
-            order = "ano"
+            order = "ano  DESC"
 
     conn = get_db_connection()
     carros = conn.execute(f'SELECT * FROM carros ORDER BY {order}').fetchall()

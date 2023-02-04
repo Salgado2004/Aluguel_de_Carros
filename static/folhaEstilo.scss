@@ -16,7 +16,7 @@ $font1: 'Roboto Slab', serif;
     font-family: $font1;
     padding: 3px;
     outline: none;
-    margin: 1px solid $color6;
+    border: 1px solid $color6;
     border-radius: 5px;
     background-color: #59f759;
 
@@ -309,7 +309,7 @@ footer{
     }
 }
 
-#loginTitle{
+#Title{
     margin: 35px;
     font-family: $font1;
     font-size: 25pt;
@@ -382,6 +382,133 @@ footer{
                 }
             }
         }
+    }
+}
+
+#add-new-car{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    form{
+        background-color: $color7;
+        border: 2px solid $color4;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 50px;
+        
+        width: 60%;
+
+        div{
+            width: 100%;
+            display: flex;
+
+            #dados-carro{
+                padding: 10px;
+                width: 50%;
+
+                fieldset{
+                    width: 100%;
+                    border-radius: 5px;
+                    border: 1px solid $color2;
+                    font-family: $font1;
+                    display: flex;
+                    flex-direction: column;
+
+                    legend{
+                        margin: 3px;
+                        font-size: 14pt;
+                        color: $color1;
+                    }
+
+                    div{
+                        display: flex;
+                        align-items: center;
+                        margin: 5px;
+
+                        input{
+                            margin-left: 5px;
+
+                            &[type="text"]{
+                                font-family: $font1;
+                                border: 1px solid $color2;
+                                border-radius: 5px;
+                                padding: 2px;
+                                outline: none;
+                                background-color: $color8;
+                            };
+
+                            &[type="range"]{
+                                -webkit-appearance: none;
+                                background-color: $color8;
+                                border: 1px solid $color2;
+                                outline: none;
+                                height: 8px;
+                                border-radius: 15px; 
+
+                                &::-webkit-slider-thumb {
+                                    -webkit-appearance: none;
+                                    appearance: none;
+                                    width: 20px;
+                                    height: 15px;
+                                    border-radius: 50%; 
+                                    background: $color3;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #img-carro{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                padding: 10px;
+                width: 50%;
+
+                legend{
+                    font-family: $font1;
+                    font-size: 14pt;
+                    color: $color1;
+                }
+
+                div{
+                    margin-top: 10px;
+
+                    input[type=radio]{
+                        display:none;
+
+                        &:checked + label{
+                            border: 1px solid $color2;
+
+                            img{
+                                transform: scale(1.1);
+                            }
+                        }
+
+                    }
+
+                    label{
+                        height: 65px;
+                        border-radius: 5px;
+
+                        img{
+                            height: 100%;
+                        }
+
+                        &:hover{
+                            cursor: pointer;
+                            filter: brightness(120%);
+                        }
+                    }
+                }
+            }
+        }
+        button{
+            @include buttonPack1();
+        }
+        
     }
 }
 

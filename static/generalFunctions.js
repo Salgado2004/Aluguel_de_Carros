@@ -13,7 +13,7 @@ document.body.onload = function(){
             perfil.innerHTML = `
             <div>
                 <p>${nome}</p>
-                <a href="#" class="options">Meu histórico</a><br>
+                <a href="/meu-historico" class="options">Meu histórico</a><br>
                 <button id="logout" onclick="logout()">Sair <span class="material-symbols-outlined">logout</span></button>
             </div>
             `;
@@ -53,7 +53,7 @@ rentings.forEach(element => {
     element.onclick = function(){
         if (hora.value == ""){
             alert("Informe todos os dados do aluguel");
-        } else if (window.sessionStorage.getItem("login" == "true")){
+        } else if (window.sessionStorage.getItem("login") == "true"){
             horaRent = hora.value;
             dataRent = data.value;
             localRent = local.value;
@@ -66,6 +66,14 @@ rentings.forEach(element => {
         }
     }
 });
+
+function addCar(){
+    if (window.sessionStorage.getItem("login") == "true"){
+        window.location.replace("/add-car");
+    } else{
+        alert("É necessário estar logado para acessar essa função");
+    }
+}
 
 function logout(){
     url = "http://127.0.0.1:5000/logout";

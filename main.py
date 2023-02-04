@@ -26,6 +26,14 @@ def logout():
     logout = bd.logout()
     return logout
 
+@app.route('/meu-historico', methods=['GET'])
+def historico():
+    return render_template("historico.html")
+
+@app.route('/add-car', methods=['GET'])
+def addCar():
+    return render_template("addCar.html")
+
 @app.route('/', methods=['GET'])
 def entry_page():
     sort = request.args.get("sort")

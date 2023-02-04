@@ -9,7 +9,7 @@ with open('database/squema.sql') as f:
 cur = connection.cursor()
 
 cur.execute("INSERT INTO usuarios (nome, email, senha, historico) VALUES (?, ?, ?, ?)",
-            ('Leonardo Salgado', 'leosalgado2004@gmail.com', '8fe15b78f0c4e515db19e72585efb585e8614158', 'Aluguel Gol em 03/02/2023, ainda não devolvido')
+            ('Leonardo Salgado', 'leosalgado2004@gmail.com', '8fe15b78f0c4e515db19e72585efb585e8614158', '{"rentCount": 1, "rentIds": [1]}')
             )
 
 cur.execute("""INSERT INTO carros (modelo, marca, ano, observation, valorDiaria, statusCarro, idUsuario, imgCarro) VALUES 
