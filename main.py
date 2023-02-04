@@ -1,5 +1,5 @@
 import sqlQuery as bd
-from flask import Flask, request, render_template
+from flask import Flask, jsonify, request, render_template
 app = Flask(__name__)
 
 def load_cars(sort):
@@ -19,12 +19,12 @@ def login():
         email = request.json['email']
         senha = request.json['senha']
         login = bd.login(email, senha)
-        return login
+        return jsonify(login)
 
 @app.route('/logout', methods=['GET'])
 def logout():
     logout = bd.logout()
-    return logout
+    return jsonify(logout)
 
 @app.route('/meu-historico', methods=['GET'])
 def historico():
@@ -33,6 +33,22 @@ def historico():
 @app.route('/add-car', methods=['GET'])
 def addCar():
     return render_template("addCar.html")
+
+@app.route('/new-car', methods=['POST'])
+def newCar():
+    data = request.get_json()
+    if not data:
+        return jsonify({'sucess': False, 'message': 'Bad request'})
+    model = request.json['model']
+    marca = request.json['marca']
+    obs = request.json['obs']
+    ano = request.json['ano']
+    valor = request.json['valor']
+    status = request.json['status']
+    dono = request.json['dono']
+    img = request.json['img']
+    result = bd.new_car(model, marca, ano, obs, valor, status, dono, img)
+    return jsonify(result)
 
 @app.route('/', methods=['GET'])
 def entry_page():

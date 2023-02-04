@@ -22,19 +22,19 @@
             <legend>Dados do carro</legend>
             <div>
               <label for="modelo">Modelo: </label>
-              <input type="text" id="modelo" name="model" placeholder="Modelo">
+              <input type="text" id="modelo" name="model" placeholder="Modelo" required>
             </div>
             <div>
               <label for="marca">Marca: </label>
-              <input type="text" id="marca" name="marca" placeholder="Marca">
+              <input type="text" id="marca" name="marca" placeholder="Marca" required>
             </div>
             <div>
               <label for="obs">Placa: </label>
-              <input type="text" id="obs" name="obs" placeholder="Placa">
+              <input type="text" id="obs" name="obs" placeholder="Placa" required>
             </div>
             <div>
               <label for="year">Ano: </label>
-              <input type="text" name="year" placeholder="Ano">
+              <input type="text" id="year" name="year" placeholder="Ano" required>
             </div>
             <div>
               <label id="labelValor" for="valor">Valor da diária: R$300,00</label>
@@ -45,7 +45,7 @@
         <div id="img-carro">
           <legend>Escolha uma imagem para o carro</legend>
           <div>
-            <input type="radio" id="img1" name="img" value="1">
+            <input type="radio" id="img1" name="img" value="1" required="required">
             <label for="img1">
               <img src="../static/assets/carro1.png" alt="">
             </label>

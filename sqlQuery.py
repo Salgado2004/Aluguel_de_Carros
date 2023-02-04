@@ -25,6 +25,17 @@ def get_cars(sort):
     
     return cars_list
 
+def new_car(model, marca, ano, obs, valor, status, dono, img):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute(f"""INSERT INTO carros (modelo, marca, ano, observation, valorDiaria, statusCarro, idUsuario, imgCarro) VALUES 
+            ('{model}', '{marca}', {ano}, 'Placa: {obs}', {valor}.0, {status}, {dono}, '{img}')""")
+    conn.commit()
+    conn.close()
+    result = {'sucess': True, 'message': "Carro salvo"}
+    return result
+
+
 def get_login():
     conn = get_db_connection()
     login = conn.execute('SELECT * FROM loggedin').fetchall()
