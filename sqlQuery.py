@@ -1,4 +1,5 @@
 import sqlite3
+import hashlib
 
 def get_db_connection():
     conn = sqlite3.connect('database.db')
@@ -30,6 +31,31 @@ def get_login():
     conn.close()
     return {'logged': login[0]['logged'], 'id': login[0]['id'], 'nome': login[0]['nome']}
 
-#import hashlib
-#senha = hashlib.sha1(b"senha").hexdigest()
-#print(senha)
+def login(email, senha):
+    f_senha = hashlib.sha1(senha.encode('utf-8')).hexdigest()
+
+    conn = get_db_connection()
+    usuarios = conn.execute('SELECT * FROM usuarios').fetchall()
+    conn.close()
+    for user in usuarios:
+        if user['email'] == email:
+            if user['senha'] == f_senha:
+                conn = get_db_connection()
+                cur = conn.cursor()
+                cur.execute(f"UPDATE loggedin SET logged = 'True', id = {user['id']}, nome = '{user['nome']}'")
+                conn.commit()
+                conn.close()
+                return {"sucess": True, "message": "Login sucedido"}
+            else:
+                return {"sucess": False, "message": "Senha inválida"}
+        else:
+            return {"sucess": False, "message": "Usuário não encontrado"}
+    
+
+def logout():
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute(f"UPDATE loggedin SET logged = 'False', id = 0, nome = ''")
+    conn.commit()
+    conn.close()
+    return {"sucess": True, "message": "Logout sucedido"}

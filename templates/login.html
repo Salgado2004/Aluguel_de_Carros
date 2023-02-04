@@ -13,6 +13,27 @@
     <header>
       <img src="../static/assets/logo.png" alt="logo">
     </header>
-    <h1>Login</h1>
+    <h1 id="loginTitle">Login</h1>
+    <div id="contentForm">
+      <form id="formLogin" action="/login" method="post">
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" placeholder="Email">
+        </div>
+        <div>
+          <label for="senha">Senha:</label>
+          <input type="password" name="senha" id="senha" placeholder="Senha">
+        </div>
+        <p id="error">none</p>
+        <button type="submit">Login</button>
+      </form>
+      <div>
+        <p id="noSign">Não tem Login? <a href="#">Cadastre-se</a> agora</p>
+      </div>
+    </div>
+    <footer>
+      <p>&copy; Leonardo Salgado | Image by <a href="https://www.freepik.com/free-vector/flat-car-collection-with-side-view_1505021.htm#query=car&position=19&from_view=keyword" target="_blank">Freepik</a></p>
+    </footer>
+    <script src="../static/login.js"></script>
 </body>
 </html>

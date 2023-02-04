@@ -11,6 +11,21 @@ $color8: #F2E9D8;
 
 $font1: 'Roboto Slab', serif;
 
+@mixin buttonPack1{
+    font-size: 14pt;
+    font-family: $font1;
+    padding: 3px;
+    outline: none;
+    margin: 1px solid $color6;
+    border-radius: 5px;
+    background-color: #59f759;
+
+    &:hover{
+        background-color: #1e6d1e;
+        cursor: pointer;
+    }
+}
+
 
 *{
     margin: 0;
@@ -198,17 +213,7 @@ header{
                     margin-top: 10px;
                     margin-left: 15px;
                     font-size: 14pt;
-                    font-family: $font1;
-                    padding: 3px;
-                    outline: none;
-                    margin: 1px solid $color6;
-                    border-radius: 5px;
-                    background-color: #59f759;
-
-                    &:hover{
-                        background-color: #1e6d1e;
-                        cursor: pointer;
-                    }
+                    @include buttonPack1();
                 }
             }
     
@@ -237,18 +242,7 @@ header{
             }
 
             button{
-                font-size: 14pt;
-                font-family: $font1;
-                padding: 3px;
-                outline: none;
-                margin: 1px solid $color6;
-                border-radius: 5px;
-                background-color: #59f759;
-
-                &:hover{
-                    background-color: #1e6d1e;
-                    cursor: pointer;
-                }
+                @include buttonPack1()
             }
         }
     }
@@ -313,7 +307,82 @@ footer{
             color: $color8;
         }
     }
+}
 
+#loginTitle{
+    margin: 35px;
+    font-family: $font1;
+    font-size: 25pt;
+}
+
+#contentForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    form{
+        font-family: $font1;
+        background-color: $color1;
+        padding: 25px;
+        border-radius: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        div{
+            margin-bottom: 15px;
+
+            label{
+                font-size: 14pt;
+            }
+
+            input{
+                background-color: $color7;
+                border: 1px solid $color4;
+                border-radius: 5px;
+                padding: 3px;
+                font-size: 13pt;
+                font-family: $font1;
+                font-weight: 300;
+                outline: none;
+            }
+        }
+
+        button{
+            margin-top: 10px;
+            @include buttonPack1()
+        }
+
+        #error{
+            margin-top: 10px;
+            font-size: 13pt;
+            color: #d33838;
+            visibility: hidden;
+            filter: drop-shadow(1px 1px 0px $color6);
+        }
+    }
+
+    > div{
+        margin-top: 8px;
+        margin-bottom: 10px;
+
+        #noSign{
+            padding: 5px;
+            font-family: $font1;
+
+            a{
+                color: $color3;
+                text-decoration: none;
+
+                &:hover{
+                    color: $color1;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
 }
 
 @media (max-height: 755px) {

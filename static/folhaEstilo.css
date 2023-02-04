@@ -170,6 +170,7 @@ header img {
   margin-top: 10px;
   margin-left: 15px;
   font-size: 14pt;
+  font-size: 14pt;
   font-family: "Roboto Slab", serif;
   padding: 3px;
   outline: none;
@@ -269,6 +270,82 @@ footer a {
 }
 footer a:hover {
   color: #F2E9D8;
+}
+
+#loginTitle {
+  margin: 35px;
+  font-family: "Roboto Slab", serif;
+  font-size: 25pt;
+}
+
+#contentForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+#contentForm form {
+  font-family: "Roboto Slab", serif;
+  background-color: #53679b;
+  padding: 25px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#contentForm form div {
+  margin-bottom: 15px;
+}
+#contentForm form div label {
+  font-size: 14pt;
+}
+#contentForm form div input {
+  background-color: #c0c6d4;
+  border: 1px solid #1e232e;
+  border-radius: 5px;
+  padding: 3px;
+  font-size: 13pt;
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  outline: none;
+}
+#contentForm form button {
+  margin-top: 10px;
+  font-size: 14pt;
+  font-family: "Roboto Slab", serif;
+  padding: 3px;
+  outline: none;
+  margin: 1px solid #202020;
+  border-radius: 5px;
+  background-color: #59f759;
+}
+#contentForm form button:hover {
+  background-color: #1e6d1e;
+  cursor: pointer;
+}
+#contentForm form #error {
+  margin-top: 10px;
+  font-size: 13pt;
+  color: #d33838;
+  visibility: hidden;
+  filter: drop-shadow(1px 1px 0px #202020);
+}
+#contentForm > div {
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+#contentForm > div #noSign {
+  padding: 5px;
+  font-family: "Roboto Slab", serif;
+}
+#contentForm > div #noSign a {
+  color: #353e55;
+  text-decoration: none;
+}
+#contentForm > div #noSign a:hover {
+  color: #53679b;
+  text-decoration: underline;
 }
 
 @media (max-height: 755px) {

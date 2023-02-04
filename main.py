@@ -13,8 +13,18 @@ def is_logged():
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    
-    return render_template("login.html")
+    if request.method == 'GET':
+        return render_template("login.html")
+    if request.method == 'POST':
+        email = request.json['email']
+        senha = request.json['senha']
+        login = bd.login(email, senha)
+        return login
+
+@app.route('/logout', methods=['GET'])
+def logout():
+    logout = bd.logout()
+    return logout
 
 @app.route('/', methods=['GET'])
 def entry_page():
