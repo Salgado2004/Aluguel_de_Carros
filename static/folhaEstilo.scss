@@ -128,7 +128,7 @@ header{
     .container{
         display: flex;
         flex-wrap: wrap;
-        .category{
+        .order{
             font-family: $font1;
             width: 150px;
             padding: 7px 0;
@@ -141,7 +141,7 @@ header{
             border: none;
             cursor: pointer;
 
-            &:focus, &:hover{
+            &:hover{
                 font-weight: 500;
                 color: $color6;
                 background-color: $color7;

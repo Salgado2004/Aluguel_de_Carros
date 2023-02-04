@@ -40,10 +40,9 @@
   <div class="filter">
     <p>Ordenar por:</p>
     <div class="container">
-      <button class="category active" name="all">Disponíveis</button>
-      <button class="category" name="national">Preço</button>
-      <button class="category" name="business">Marca</button>
-      <button class="category" name="sports">Ano</button>
+      <button class="order" name="status">Disponíveis</button>
+      <button class="order" name="price">Preço</button>
+      <button class="order" name="year">Ano</button>
     </div>
   </div>
 
@@ -80,9 +79,9 @@
                 {% endif %}
               </ul>
               {% if car['status'] > 1 %}
-              <button disabled>Alugar</button>
+              <button class="rent" name="{{ car['id']}}" disabled>Alugar</button>
               {% else %}
-              <button>Alugar</button>
+              <button class="rent" name="{{ car['id']}}">Alugar</button>
               {% endif %}
             </div>
           </div>

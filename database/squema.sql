@@ -29,7 +29,8 @@ CREATE TABLE aluguel (
     dataAluguel DATE NOT NULL,
     hora TIME NOT NULL,
     localRetirada TEXT NOT NULL,
-    idUsuario INTEGER NOT NULL
+    idUsuario INTEGER NOT NULL,
+    Finalizado TEXT
 );
 
 CREATE TABLE loggedin (

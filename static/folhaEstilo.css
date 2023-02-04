@@ -105,7 +105,7 @@ header img {
   display: flex;
   flex-wrap: wrap;
 }
-.filter .container .category {
+.filter .container .order {
   font-family: "Roboto Slab", serif;
   width: 150px;
   padding: 7px 0;
@@ -118,7 +118,7 @@ header img {
   border: none;
   cursor: pointer;
 }
-.filter .container .category:focus, .filter .container .category:hover {
+.filter .container .order:hover {
   font-weight: 500;
   color: #202020;
   background-color: #c0c6d4;

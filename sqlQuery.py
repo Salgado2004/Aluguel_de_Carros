@@ -5,9 +5,17 @@ def get_db_connection():
     conn.row_factory = sqlite3.Row
     return conn
 
-def get_cars():
+def get_cars(sort):
+    match sort:
+        case "status":
+            order = "statusCarro"
+        case "price":
+            order = "valorDiaria"
+        case "year":
+            order = "ano"
+
     conn = get_db_connection()
-    carros = conn.execute('SELECT * FROM carros').fetchall()
+    carros = conn.execute(f'SELECT * FROM carros ORDER BY {order}').fetchall()
     conn.close()
     
     cars_list = []
@@ -20,7 +28,6 @@ def get_login():
     conn = get_db_connection()
     login = conn.execute('SELECT * FROM loggedin').fetchall()
     conn.close()
-    print(login[0]['logged'], login[0]['id'], login[0]['nome'])
     return {'logged': login[0]['logged'], 'id': login[0]['id'], 'nome': login[0]['nome']}
 
 #import hashlib
