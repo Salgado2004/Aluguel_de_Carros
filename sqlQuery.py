@@ -21,7 +21,11 @@ def get_cars(sort):
     
     cars_list = []
     for car in carros:
-        cars_list.append({'id': car['id'], 'modelo': car['modelo'], 'marca': car['marca'], 'ano': car['ano'], 'obs': car['observation'], 'valor': car['valorDiaria'], 'status': car['statusCarro'], 'dono': car['idUsuario'], 'img': car['imgCarro']})
+        dono = car['idUsuario']
+        conn = get_db_connection()
+        user = conn.execute(f'SELECT nome FROM usuarios WHERE id = {dono}').fetchall()
+        conn.close()
+        cars_list.append({'id': car['id'], 'modelo': car['modelo'], 'marca': car['marca'], 'ano': car['ano'], 'obs': car['observation'], 'valor': car['valorDiaria'], 'status': car['statusCarro'], 'dono': car['idUsuario'], 'nomeDono': user[0]['nome'], 'img': car['imgCarro']})
     
     return cars_list
 
@@ -34,6 +38,16 @@ def new_car(model, marca, ano, obs, valor, status, dono, img):
     conn.close()
     result = {'sucess': True, 'message': "Carro salvo"}
     return result
+
+def deleteCar(id):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute(f"DELETE FROM carros WHERE id = {id}")
+    conn.commit()
+    conn.close()
+    result = {'sucess': True, 'message': 'Carro deletado'}
+    return result
+
 
 
 def get_login():
@@ -59,8 +73,7 @@ def login(email, senha):
                 return {"sucess": True, "message": "Login sucedido"}
             else:
                 return {"sucess": False, "message": "Senha inválida"}
-        else:
-            return {"sucess": False, "message": "Usuário não encontrado"}
+    return {"sucess": False, "message": "Usuário não encontrado"}
     
 
 def logout():

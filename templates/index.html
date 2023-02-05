@@ -63,11 +63,12 @@
             <div class="slide__image">
               <img src="../static/assets/{{ car['img']}}" alt="">
             </div>
-            <div class="slide__content" aria-label="{{ car['dono']}}">
+            <div class="slide__content" aria-label="{{ car['dono']}}" aria-details="{{ car['id']}}">
               <div class="forDono">
                 
               </div>
               <ul>
+                <li>Dono: {{ car['nomeDono']}};</li>
                 <li>{{ car['marca']}};</li>
                 <li>{{ car['modelo']}};</li>
                 <li>{{ car['ano']}};</li>

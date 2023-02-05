@@ -189,8 +189,9 @@ header img {
   margin-bottom: 3px;
 }
 .splide__track .splide__slide .slide .slide__content .rent {
-  margin-top: 10px;
-  margin-left: 15px;
+  float: right;
+  margin-bottom: 5px;
+  margin-right: 5px;
   font-size: 14pt;
   font-size: 14pt;
   font-family: "Roboto Slab", serif;

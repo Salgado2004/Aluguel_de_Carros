@@ -17,6 +17,22 @@ document.body.onload = function(){
                 <button id="logout" onclick="logout()">Sair <span class="material-symbols-outlined">logout</span></button>
             </div>
             `;
+
+            forDono = document.querySelectorAll(".slide__content");
+            forDono.forEach(element => {
+                idUser = `${window.sessionStorage.getItem("idUsuario")}`;
+                if (element.ariaLabel == idUser){
+                    divUD = element.children[0];
+                    divUD.innerHTML = `
+                        <button onclick='editar(${element.getAttribute('aria-details')})'>
+                        <span class="material-symbols-outlined">edit</span>
+                        </button>
+                        <button onclick='deletar(${element.getAttribute('aria-details')})'>
+                        <span class="material-symbols-outlined">delete</span>
+                        </button>
+                    `;
+                }
+            });
         } else{
             window.sessionStorage.setItem("login", "false");
         }
@@ -32,22 +48,7 @@ filtros.forEach(button => {
     }
 }); 
 
-forDono = document.querySelectorAll(".slide__content");
 
-forDono.forEach(element => {
-    idUser = `${window.sessionStorage.getItem("idUsuario")}`;
-    if (element.ariaLabel == idUser){
-        divUD = element.children[0];
-        divUD.innerHTML = `
-            <button>
-              <span class="material-symbols-outlined">edit</span>
-            </button>
-            <button>
-              <span class="material-symbols-outlined">delete</span>
-            </button>
-        `;
-    }
-});
 
 
 local = document.querySelector("#local");
@@ -92,6 +93,23 @@ function addCar(){
     }
 }
 
+
+function deletar(id){
+    url = `http://127.0.0.1:5000/delete/${id}`;
+    fetch(url,{
+        method:"DELETE"
+    })
+    .then(response => response.json())
+    .then(json =>{
+        alert(json.message);
+    })
+    .catch(error => console.error(error))
+}
+
+function editar(id){
+    alert("ok, editar é mais dboa");
+}
+
 function logout(){
     url = "http://127.0.0.1:5000/logout";
     fetch(url,{
@@ -108,4 +126,5 @@ function logout(){
     })
     .catch(error => console.error(error))
 }
+
 

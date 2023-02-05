@@ -50,6 +50,11 @@ def newCar():
     result = bd.new_car(model, marca, ano, obs, valor, status, dono, img)
     return jsonify(result)
 
+@app.route('/delete/<int:id>', methods=['DELETE'])
+def delete_contact(id):
+    result = bd.deleteCar(id)
+    return jsonify(result)
+
 @app.route('/', methods=['GET'])
 def entry_page():
     sort = request.args.get("sort")
