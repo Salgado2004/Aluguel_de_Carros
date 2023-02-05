@@ -32,6 +32,7 @@ form.onsubmit = function(e){
     .then(json =>{
         if (json.sucess){
             alert(json.message);
+            window.location.replace("http://127.0.0.1:5000");
         }
     })
     .catch(error => console.error(error))
