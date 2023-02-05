@@ -24,7 +24,7 @@ document.body.onload = function(){
                 if (element.ariaLabel == idUser){
                     divUD = element.children[0];
                     divUD.innerHTML = `
-                        <button onclick='editar(${element.getAttribute('aria-details')})'>
+                        <button onclick='allowEdit(${element.getAttribute('aria-details')})'>
                         <span class="material-symbols-outlined">edit</span>
                         </button>
                         <button onclick='deletar(${element.getAttribute('aria-details')})'>
@@ -106,8 +106,76 @@ function deletar(id){
     .catch(error => console.error(error))
 }
 
-function editar(id){
-    alert("ok, editar é mais dboa");
+function allowEdit(id){
+    rent = document.querySelector(`#rent${String(id)}`);
+    rent.style.display = "none";
+
+    editables = document.querySelectorAll(`.editable${String(id)}`);
+    editables.forEach(element => {
+        element.style.display = "none";
+    });
+    placa = editables[0].innerText.split(": ");
+    valor = editables[1].innerText.split("R$");
+    statusCarro = editables[2].innerText;
+
+    formEdit = document.querySelector(`#edit${String(id)}`);
+    formEdit.innerHTML = `
+        <form id="editing${String(id)}" action="/edit" method="post" onsubmit="edit(e)">
+            <li>Placa: <input type="text" id="new-obs-${String(id)}" placeholder="Placa" value="${placa[1]}" required></li>
+            <li>Diária: R$<input type="number" id="new-valor-${String(id)}" placeholder="Valor" step="10" value="${valor[1]}" required></li>
+            <li>
+                <select id="new-status-${String(id)}" required>
+                    <option value="1">Disponível</option>
+                    <option value="3">Em manutenção</option>
+                </select>
+            </li>
+            <div>
+                <button id="edit" type="submit">
+                    <span class="material-symbols-outlined">done</span>
+                </button>
+                <button id="cancel">
+                    <span class="material-symbols-outlined" onclick="cancelEdit(${id})">close</span>
+                </button>
+            </div>
+        </form>
+    `;    
+
+    editing = document.querySelector(`#editing${String(id)}`);
+    editing.onsubmit = function(e){
+        e.preventDefault();
+        newPlaca = document.querySelector(`#new-obs-${String(id)}`).value;
+        newValor = document.querySelector(`#new-valor-${String(id)}`).value;
+        newStatus = document.querySelector(`#new-status-${String(id)}`).value;
+
+        let url = `http://127.0.0.1:5000/update/${id}`;
+        const data = {'newObs': newPlaca, 'newValor': newValor, 'newStatus': newStatus};
+        fetch(url,{
+            method:"PUT",
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(json =>{
+            if (json.sucess){
+                alert(json.message);
+            }
+        })
+        .catch(error => console.error(error))
+    }
+}
+
+function cancelEdit(id){
+    rent = document.querySelector(`#rent${String(id)}`);
+    rent.style.display = "block";
+
+    editables = document.querySelectorAll(`.editable${String(id)}`);
+    editables.forEach(element => {
+        element.style.display = "block";
+    });
+    formEdit = document.querySelector(`#edit${String(id)}`);
+    formEdit.innerHTML = ``; 
 }
 
 function logout(){

@@ -68,24 +68,25 @@
                 
               </div>
               <ul>
-                <li>Dono: {{ car['nomeDono']}};</li>
-                <li>{{ car['marca']}};</li>
-                <li>{{ car['modelo']}};</li>
-                <li>{{ car['ano']}};</li>
-                <li>{{ car['obs']}};</li>
-                <li>Diária: R${{ car['valor']}};</li>
+                <li>Dono: {{ car['nomeDono']}}</li>
+                <li>{{ car['marca']}}</li>
+                <li>{{ car['modelo']}}</li>
+                <li>{{ car['ano']}}</li>
+                <li class="editable{{ car['id']}}">{{ car['obs']}}</li>
+                <li class="editable{{ car['id']}}">Diária: R${{ car['valor']}}</li>
                 {% if car['status'] == 1 %}
-                <li>Disponível</li>
+                <li class="editable{{ car['id']}}">Disponível</li>
                 {% elif car['status'] == 2 %}
                 <li style="color: red">Alugado</li>
                 {% else %}
-                <li style="color: red">Em manutenção</li>
+                <li class="editable{{ car['id']}}" style="color: red">Em manutenção</li>
                 {% endif %}
+                <div class="editForm" id="edit{{ car['id']}}"></div>
               </ul>
               {% if car['status'] > 1 %}
-              <button class="rent" name="{{ car['id']}}" disabled>Alugar</button>
+              <button id="rent{{ car['id']}}" class="rent" name="{{ car['id']}}" disabled>Alugar</button>
               {% else %}
-              <button class="rent" name="{{ car['id']}}">Alugar</button>
+              <button id="rent{{ car['id']}}" class="rent" name="{{ car['id']}}">Alugar</button>
               {% endif %}
             </div>
           </div>

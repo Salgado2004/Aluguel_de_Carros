@@ -48,7 +48,14 @@ def deleteCar(id):
     result = {'sucess': True, 'message': 'Carro deletado'}
     return result
 
-
+def updateCar(id, obs, valor, statusCarro):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute(f"UPDATE carros SET observation='Placa: {obs}', valorDiaria={valor}, statusCarro={statusCarro} WHERE id = {id}")
+    conn.commit()
+    conn.close()
+    result = {'sucess': True, 'message': 'Carro atualizado'}
+    return result
 
 def get_login():
     conn = get_db_connection()

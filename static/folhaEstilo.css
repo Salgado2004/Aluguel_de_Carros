@@ -76,9 +76,9 @@ header img {
   float: right;
   display: flex;
   align-items: center;
+  padding: 5px;
   font-family: "Roboto Slab", serif;
   font-weight: 400;
-  padding: 5px;
   background-color: #d33838;
   color: #F2E9D8;
   outline: none;
@@ -184,18 +184,61 @@ header img {
   margin-top: 10px;
   margin-left: 25px;
   font-size: 12pt;
+  list-style: none;
 }
 .splide__track .splide__slide .slide .slide__content ul li {
   margin-bottom: 3px;
+}
+.splide__track .splide__slide .slide .slide__content .editForm input {
+  width: 75px;
+  background-color: #F2E9D8;
+  border: 1px solid #1e232e;
+  border-radius: 5px;
+  font-family: "Roboto Slab", serif;
+  outline: none;
+  padding-left: 2px;
+}
+.splide__track .splide__slide .slide .slide__content .editForm select {
+  background-color: #F2E9D8;
+  border: 1px solid #1e232e;
+  border-radius: 5px;
+  font-family: "Roboto Slab", serif;
+  outline: none;
+  padding-left: 2px;
+}
+.splide__track .splide__slide .slide .slide__content .editForm #edit {
+  font-size: 14pt;
+  font-family: "Roboto Slab", serif;
+  outline: none;
+  border: 1px solid #202020;
+  border-radius: 5px;
+  background-color: #59f759;
+}
+.splide__track .splide__slide .slide .slide__content .editForm #edit:hover {
+  background-color: #1e6d1e;
+  cursor: pointer;
+}
+.splide__track .splide__slide .slide .slide__content .editForm #cancel {
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  background-color: #d33838;
+  color: #F2E9D8;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+.splide__track .splide__slide .slide .slide__content .editForm #cancel:hover {
+  background-color: #6e2222;
+  cursor: pointer;
 }
 .splide__track .splide__slide .slide .slide__content .rent {
   float: right;
   margin-bottom: 5px;
   margin-right: 5px;
   font-size: 14pt;
+  padding: 3px;
   font-size: 14pt;
   font-family: "Roboto Slab", serif;
-  padding: 3px;
   outline: none;
   border: 1px solid #202020;
   border-radius: 5px;
@@ -227,9 +270,9 @@ header img {
   text-align: center;
 }
 .splide__track .splide__slide #addYourCar button {
+  padding: 3px;
   font-size: 14pt;
   font-family: "Roboto Slab", serif;
-  padding: 3px;
   outline: none;
   border: 1px solid #202020;
   border-radius: 5px;
@@ -335,9 +378,9 @@ footer a:hover {
 }
 #contentForm form button {
   margin-top: 10px;
+  padding: 3px;
   font-size: 14pt;
   font-family: "Roboto Slab", serif;
-  padding: 3px;
   outline: none;
   border: 1px solid #202020;
   border-radius: 5px;
@@ -474,9 +517,9 @@ footer a:hover {
   filter: brightness(120%);
 }
 #add-new-car form button {
+  padding: 3px;
   font-size: 14pt;
   font-family: "Roboto Slab", serif;
-  padding: 3px;
   outline: none;
   border: 1px solid #202020;
   border-radius: 5px;

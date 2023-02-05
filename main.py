@@ -50,8 +50,19 @@ def newCar():
     result = bd.new_car(model, marca, ano, obs, valor, status, dono, img)
     return jsonify(result)
 
+@app.route('/update/<int:id>', methods=['PUT'])
+def update_car(id):
+    data = request.get_json()
+    if not data:
+        return jsonify({'sucess': False, 'message': 'Bad request'})
+    obs = request.json['newObs']
+    valor = request.json['newValor']
+    status = request.json['newStatus']
+    result = bd.updateCar(id, obs, valor, status)
+    return jsonify(result)
+
 @app.route('/delete/<int:id>', methods=['DELETE'])
-def delete_contact(id):
+def delete_car(id):
     result = bd.deleteCar(id)
     return jsonify(result)
 

@@ -14,7 +14,6 @@ $font1: 'Roboto Slab', serif;
 @mixin buttonPack1{
     font-size: 14pt;
     font-family: $font1;
-    padding: 3px;
     outline: none;
     border: 1px solid $color6;
     border-radius: 5px;
@@ -22,6 +21,21 @@ $font1: 'Roboto Slab', serif;
 
     &:hover{
         background-color: #1e6d1e;
+        cursor: pointer;
+    }
+}
+
+@mixin buttonPack2{
+    font-family: $font1;
+    font-weight: 400;
+    background-color: #d33838;
+    color: $color8;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+
+    &:hover{
+        background-color: #6e2222;
         cursor: pointer;
     }
 }
@@ -112,19 +126,8 @@ header{
             float: right;
             display: flex;
             align-items: center;
-            font-family: $font1;
-            font-weight: 400;
             padding: 5px;
-            background-color: #d33838;
-            color: $color8;
-            outline: none;
-            border: none;
-            border-radius: 5px;
-
-            &:hover{
-                background-color: #6e2222;
-                cursor: pointer;
-            }
+            @include buttonPack2();
         }
     }
 }
@@ -227,9 +230,38 @@ header{
                     margin-top: 10px;
                     margin-left: 25px;
                     font-size: 12pt;
+                    list-style: none;
 
                     li{
                         margin-bottom: 3px;
+                    }
+                }
+
+                .editForm{
+                    input{
+                        width: 75px;
+                        background-color: $color8;
+                        border: 1px solid $color4;
+                        border-radius: 5px;
+                        font-family: $font1;
+                        outline: none;
+                        padding-left: 2px;
+                    }
+
+                    select{
+                        background-color: $color8;
+                        border: 1px solid $color4;
+                        border-radius: 5px;
+                        font-family: $font1;
+                        outline: none;
+                        padding-left: 2px;
+                    }
+
+                    #edit{
+                        @include buttonPack1();
+                    }
+                    #cancel{
+                        @include buttonPack2();
                     }
                 }
 
@@ -238,6 +270,7 @@ header{
                     margin-bottom: 5px;
                     margin-right: 5px;
                     font-size: 14pt;
+                    padding: 3px;
                     @include buttonPack1();
                 }
             }
@@ -267,6 +300,7 @@ header{
             }
 
             button{
+                padding: 3px;
                 @include buttonPack1()
             }
         }
@@ -377,6 +411,7 @@ footer{
 
         button{
             margin-top: 10px;
+            padding: 3px;
             @include buttonPack1()
         }
 
@@ -531,6 +566,7 @@ footer{
             }
         }
         button{
+            padding: 3px;
             @include buttonPack1();
         }
         
