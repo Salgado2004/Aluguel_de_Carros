@@ -44,7 +44,24 @@ def new_rent(idCarro, idUsuario, data, local, hora, status):
     conn = get_db_connection()
     cur = conn.cursor()
     cur.execute(f"""INSERT INTO aluguel (idCarro, idUsuario, dataAluguel, localRetirada, hora, finalizado) VALUES 
-            ('{idCarro}', '{idUsuario}', '{data}', '{local}', '{hora}', '{status}')""")
+            ('{idCarro}', '{idUsuario}', '{data}', '{local}', '{hora}', '{status}');""")
+    cur.execute(f"UPDATE carros SET statusCarro = 2 WHERE id = {idCarro}")
+    idAluguel = cur.execute("SELECT LAST_INSERT_ID();").fetchall()
+    conn.commit()
+    conn.close()
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+    get_historico = conn.execute(f'SELECT historico FROM usuarios WHERE id={idUsuario}').fetchall()
+    conn.close()
+    historico = json.loads(get_historico[0])
+    historico['rentIds'].append(idAluguel)
+    historico['rentCount'] = int(historico['rentCount'])+1
+
+    new_historico = {"rentCount": historico['rentCount'], "rentIds": historico['rentIds']}
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute(f"UPDATE usuarios SET historico = '{new_historico}' WHERE id = {idUsuario}")
     conn.commit()
     conn.close()
     result = {'sucess': True, 'message': "Aluguel realizado"}
