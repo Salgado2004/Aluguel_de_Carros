@@ -1,5 +1,6 @@
 import sqlite3
 import hashlib
+import json
 
 def get_db_connection():
     conn = sqlite3.connect('database.db')
@@ -38,6 +39,38 @@ def new_car(model, marca, ano, obs, valor, status, dono, img):
     conn.close()
     result = {'sucess': True, 'message': "Carro salvo"}
     return result
+
+def new_rent(idCarro, idUsuario, data, local, hora, status):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute(f"""INSERT INTO aluguel (idCarro, idUsuario, dataAluguel, localRetirada, hora, finalizado) VALUES 
+            ('{idCarro}', '{idUsuario}', '{data}', '{local}', '{hora}', '{status}')""")
+    conn.commit()
+    conn.close()
+    result = {'sucess': True, 'message': "Aluguel realizado"}
+    return result
+
+def load_historico(id):
+    conn = get_db_connection()
+    get_historico = conn.execute(f'SELECT historico FROM usuarios WHERE id={id}').fetchall()
+    conn.close()
+    historico = json.loads(get_historico[0]['historico'])
+    alugueis = []
+    for rent in historico['rentIds']:
+        conn = get_db_connection()
+        rents = conn.execute(f'SELECT * FROM aluguel WHERE id={rent}').fetchall()
+        conn.close()
+        conn = get_db_connection()
+
+        idCarro = rents[0]['id']
+        carro = conn.execute(f'SELECT modelo, marca FROM carros WHERE id={idCarro}').fetchall()
+        conn.close()
+
+        aluguel = {'modelo': carro[0]['modelo'], 'marca': carro[0]['marca'], 'data': rents[0]['dataAluguel'], 'hora': rents[0]['hora'], 'finalizado': rents[0]['Finalizado']}
+        alugueis.append(aluguel)
+
+    history = {'rentCount': historico['rentCount'], 'alugueis': alugueis}
+    return history
 
 def deleteCar(id):
     conn = get_db_connection()

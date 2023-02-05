@@ -30,6 +30,11 @@ def logout():
 def historico():
     return render_template("historico.html")
 
+@app.route('/load-historico/<int:idUser>', methods=['GET'])
+def load_historico(idUser):
+    historico = bd.load_historico(idUser)
+    return jsonify(historico)
+
 @app.route('/add-car', methods=['GET'])
 def addCar():
     return render_template("addCar.html")
@@ -48,6 +53,20 @@ def newCar():
     dono = request.json['dono']
     img = request.json['img']
     result = bd.new_car(model, marca, ano, obs, valor, status, dono, img)
+    return jsonify(result)
+
+@app.route('/new-rent', methods=['POST'])
+def newRent():
+    data = request.get_json()
+    if not data:
+        return jsonify({'sucess': False, 'message': 'Bad request'})
+    idCarro = request.json['idCarro']
+    idUsuario = request.json['idUsuario']
+    local = request.json['local']
+    data = request.json['data']
+    hora = request.json['hora']
+    status = request.json['finalizado']
+    result = bd.new_rent(idCarro, idUsuario, data, local, hora, status)
     return jsonify(result)
 
 @app.route('/update/<int:id>', methods=['PUT'])

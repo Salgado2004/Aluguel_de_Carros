@@ -78,7 +78,22 @@ rentings.forEach(element => {
             idCarro = parseInt(element.name);
             idUsuario = window.sessionStorage.getItem("idUsuario");
             finalizado = "Não";
-            alert(`Usuario ${idUsuario} alugou o carro ${idCarro}`);
+            let url = `http://127.0.0.1:5000/new-rent`;
+            const data = {"idCarro": idCarro, "idUsuario": idUsuario, "local": localRent, "data": dataRent, "hora": horaRent, "finalizado": finalizado};
+            fetch(url,{
+                method:"POST",
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(json =>{
+                if (json.sucess){
+                    alert(json.message);
+                }
+            })
+            .catch(error => console.error(error))
         } else{
             alert("É necessário estar logado para alugar um veículo");
         }
